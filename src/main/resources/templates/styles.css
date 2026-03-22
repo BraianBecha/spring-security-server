@@ -1,0 +1,998 @@
+:root {
+
+    --color-1: #0118D8;
+    --color-1-1: #0416bd;
+    --color-2: #1B56FD;
+    --color-3: #E9DFC3;
+    --color-4: #FFF8F8;
+    --color-dark: #37383d;
+    --color-dark-2: #5c5c5c;
+    --color-dark-3:  #b9b9b9;
+    --color-purpura: rgb(180, 8, 180);
+
+    --padding-left: 25vw;
+    --padding-right: 2vw;
+
+      
+
+    --card-width: 19rem;
+    --card-height: 22rem;
+}
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+background: #d9d0d0;
+background: linear-gradient(90deg, rgb(204, 197, 197) 0%, rgba(255, 248, 248, 1) 50%, rgb(241, 223, 211) 100%);
+    font-family: Raleway;
+    height: 100%;
+    min-height: 100%;
+    background-color: var(--color-4);
+}
+a{
+  text-decoration: none;
+  text-decoration-color: #01d8cd;
+}
+
+
+#menu-p >i{
+   
+    font-size: 3rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+#menu-p :hover{
+background-color: var(--color-purpura);
+}
+#dropdown-m{
+    
+    z-index: 2;
+    position: relative;
+    background-color: var(--color-2);
+    border: solid 2px var(--color-dark);
+    border-radius: 0.8rem;
+    padding: 1rem;
+}
+header ol li{
+   list-style: none;
+   font-size: 1rem;
+   padding: 0.7rem;
+   
+}
+header ol li:hover{
+    background-color: var(--color-purpura);
+}
+
+#content{
+    
+    z-index: 1;
+    align-items: center;
+position: absolute;
+color: var(--color-dark);
+width: 100%;
+height: 100%;
+padding-left: var(--padding-left);
+padding-right: var(--padding-right);
+  
+}
+#section2{
+    font-size: 2rem;
+}
+#section2 h1 {
+    padding: 1rem;
+}
+section{
+    padding-top: 5em;
+    padding-bottom: 5em;
+    max-width: 95vw;
+    
+}
+header{
+    max-height: 9rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: linear-gradient(to top, var(--color-2), var(--color-1-1 ));
+    /*background: linear-gradient(to left, var(--color-2), var(--color-1 ),var(--color-2));*/
+    color: var(--color-4);
+    padding: 1rem;
+   
+    
+    
+}
+
+
+
+.newspaper {
+    column-count: 2;
+    column-gap: 5em;
+    column-rule-style: solid;
+     column-rule-width: 3px;
+     color: var(--color-dark);
+     column-rule-color: var(--color-dark-2);
+     background-color: var(--color-4);
+     border-radius: 1rem;
+     padding: 2rem;
+    
+    }
+
+
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
+    perspective: 1000px;        
+}
+
+.card{
+   display: grid;
+    grid-template-columns: auto;
+    width: var(--card-width);
+    height: var(--card-height);   
+    margin: 1rem;
+    position: relative;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border: solid, 2px, var(--color-dark-3);
+    border-radius: 1rem;    
+}
+
+
+.card-front{
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+}
+.card-front .card-img{
+    overflow: hidden;
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 9;
+
+}
+.card-front .card-title{
+
+    grid-row-start: 9;
+    grid-row-end: 10;
+
+}
+.card-front .card-tools{
+
+    grid-row-start: 10;
+    grid-row-end: 13;
+
+     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+
+
+ .card-front, 
+ .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;    
+    font-size: 1.2rem;
+    background-color: var(--color-4);
+    border-radius: 2rem;
+    list-style: none;
+}
+.card-back>a{
+  color: #01d8cd !important;
+}
+.card-back > a:hover{
+    background-color: var(--color-purpura);
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.card-title{
+    font-size: 1rem;
+    padding: 0.3rem;
+    display: flex ;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-dark-3);
+}
+.card-tools{
+
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+}
+
+
+.card-tools > div{
+background-color: #3d3c37;
+    color: beige;
+    font-size: 1rem ;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+    
+.card-back {
+    transform: rotateY(180deg);
+    background-color: var(--color-dark) ;
+    color:var(--color-3);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+
+
+.card-back:hover {
+    filter: brightness(1.1); 
+}
+.card-front:hover{
+    filter: brightness(1.1);
+}
+
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+.icon{
+    color: var(--color-dark);
+    font-size: 3rem;
+    padding: 0.5rem;
+    border-radius: 1.3rem;
+}
+.icon:hover{
+      filter: brightness(1.1); 
+      background-color: var(--color-purpura);
+}
+
+   .img-perfil{
+    height: 13rem;
+    width: 13rem;
+    border-radius: 9.1rem;
+    z-index: 4;
+    position: relative;
+   
+}
+.img-perfil-gato{    
+    position: relative;
+    height: 21rem;
+    width: 21rem;   
+    z-index: 4;
+}
+
+.img-perfil:hover {
+ filter: brightness(1.3); 
+}
+.img-perfil-gato:hover {
+ filter: brightness(1.3); 
+}
+.img-perfil-gato-nav:hover {
+ filter: brightness(1.3); 
+}
+
+#elipse1{
+    height: 100% ;
+    position: absolute;
+    z-index: -1;
+    fill: var(--color-2);
+    /*  background-image: radial-gradient(circle at center, var(--color-2), var(--color-1-1 ));    */
+    rx: 20vw;
+    ry: 70vh;
+    cx: 0;
+    cy: 50vh;    
+}
+.svg1{
+    height: 150%;
+    width: 40vw;
+    position: absolute;
+    
+}
+.contenedor-eliptico {
+    position: relative;    
+    max-width: 53rem;
+    width: 50vw;
+    height: 100vh;
+    left: -20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-direction: column;        
+}
+
+
+.elipse-grande {
+    width: 30vw;
+    height: 80vh;
+    background-color: #4caf50;
+    clip-path: ellipse(50% 50% at 50% 50%);
+    position: absolute;
+    z-index: 1;
+}
+
+.elipse-pequena {
+    width: 20vw;
+    height: 100vh;
+    background-color: #ff990000;
+    clip-path: ellipse(63% 61% at 54% 41%);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 10vw;
+    left: 19vw;
+}
+
+.texto-eliptico {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    max-width: 100%;    
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    list-style: none;
+    line-height: 1.4;
+    z-index: 3;
+}
+
+.email{
+    background-color: #3d3c37;
+    font-size: 1.5rem;
+}
+
+.saludo {
+    font-size: 3rem;
+    margin: 2.5rem;
+    margin-top: 10rem;
+}
+
+.listfinal{
+    margin: 2rem;
+    margin-top: 3rem;
+}
+
+.sobremifotoynombre{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.nombresobremi {
+    position: relative;
+    float: left;
+    margin-top: 1rem;
+    margin-left: 1rem; 
+    padding: 2rem;
+    font-size: 2.5rem;
+    text-align: left;
+    color: var(--color-dark);
+    list-style: none;
+    line-height: 1.4;
+    z-index: 3;
+}
+
+
+
+
+
+
+.form1{
+    background-color:  var(--color-4);
+    display: grid;
+    margin: 2rem;
+    padding: 2rem;
+    border: solid 1px var(--color-dark-2);
+    border-radius: 1rem;
+    min-width: 30rem;
+    max-width: 50rem;
+    font-size: 1.5rem;    
+}
+
+.form1 .button{
+    max-width: max-content; 
+    font-size: 1rem;
+    background-color: var(--color-2);
+    border-radius: 0.5rem;
+    color: white;
+    padding: 0.9rem;
+    margin: 0.3rem;
+}
+
+.form1 .button i{
+    
+    padding: 0.2rem;
+    margin: 0.3rem;
+}
+
+.form1 .button:hover{
+   background-color: var(--color-purpura);
+}
+.form1 .inp-nombre{
+    display: grid;    
+    margin: 1rem;
+    grid-column: 2 / 3; 
+    grid-row: 2 / 3;    
+    height: 1.3rem ;
+    margin: 1.5rem ;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    
+} 
+.form1 .inp-email{
+    display: grid;    
+    margin: 1rem;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;    
+    height: 1.3rem ;
+    margin: 1.5rem ;
+    padding: 1rem;
+    border-radius: 1rem;
+     font-size: 2rem;
+}
+.form1 .inp-mensaje{
+    
+    display: grid;    
+    margin: 1rem;
+    grid-column: 2 / 3; 
+    grid-row: 6 / 7;    
+    padding: 3rem ;
+    border-radius: 1rem;
+     font-size: 1.5rem;
+     width: 100%;
+
+}
+
+.lab-nombre{
+    grid-column: 1 / 2; 
+    grid-row: 1 / 2;    
+}
+.lab-email{
+    grid-column: 1 / 2; 
+    grid-row: 3 / 4;
+}
+.lab-mensaje{
+    grid-column: 1 / 2; 
+    grid-row: 7 / 8;
+}
+
+.img-perfil-gato-nav{
+        width: 5rem;
+    height: 5rem;
+}
+
+
+
+@media (max-width: 640px) {
+
+    #menu-p >i {
+        font-size: 2rem;
+    }
+
+
+    .saludo {
+    padding: 2rem;
+}
+
+
+    .nombresobremi {
+        font-size: 1.8rem;
+    }
+
+    .img-perfil{
+    height: 5rem;
+    width: 5rem;
+    
+   
+}
+
+    #content{
+        padding: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .newspaper {
+    column-count: 1;
+};
+
+    .svg1 {
+        height: 150vh;
+        width: 60vw;
+        position: absolute;
+        }
+
+       #elipse1 {
+        rx: 8rem;
+        ry: 38rem;
+    }
+    .contenedor-eliptico{
+        display: none;
+    }
+    .saludo{
+        font-size: 1.7rem;
+        margin-top: 6rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+    .card-tools > div{
+        
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    }
+    .card-back{
+        font-size: 0.9rem;
+    }
+    #section2{
+        font-size: 1rem;
+    }
+    #section2 >div> .newspaper{
+        margin: 0.5rem;
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+    #section2>div > .form1{
+        margin: 1rem;
+    }
+    #saludo1{
+        background-color: var(--color-4);
+        border-radius: 2rem;
+    }
+    .form1
+ {
+    display: grid;
+    border: solid 1px var(--color-dark-2);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    min-width: 0;
+    margin: 0;
+    padding: 2rem;
+}
+
+    .form1 .inp-mensaje, .inp-nombre ,.inp-email{    
+    
+    margin: 1rem;     
+    padding: 1rem ;
+    border-radius: 1rem;
+     font-size: 0.8rem;
+     width: 80%;
+
+}
+#section1 , #section2{
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.form1 > form > div > .inp-nombre{
+    font-size: 0.7rem;
+    margin: 0.1rem;
+}
+.form1 > form > div > .inp-email{
+     font-size: 0.7rem;
+    margin: 0.1rem;
+}
+.form1 > form > div > .inp-mensaje{
+     font-size: 0.7rem;
+    margin: 0.1rem;
+}
+
+.form1 > form > div > .lab-nombre{
+    margin: 1rem;
+    font-size: 1rem;
+}
+.form1 > form > div > .lab-email{
+     margin: 1rem;
+    font-size: 1rem;
+}
+.form1 > form > div > .lab-mensaje{
+     margin: 1rem;
+    font-size: 1rem;
+}
+
+.form1 >form> .button{
+    font-size: 0.9rem;
+    padding: 0.2rem;
+    margin: 1rem;
+}
+
+header ol li {
+    font-size: 0.9rem;
+    
+}
+.card-tools > div{
+    font-size: 0.8rem;
+}
+.card-front > p{
+    font-size: 0.6rem;
+}
+
+.card-front ,.card-back{
+    border-radius: 1rem;
+}
+.card-back{
+    padding: 0.5rem;
+}
+.calltoaction{
+    font-size: 0.7rem;
+    margin: 0.3rem;
+}
+
+}
+@media (min-width:641px) and (max-width:768px){
+
+    #menu-p >i {
+        font-size: 2rem;
+    }
+
+    
+    .saludo {
+    padding: 2rem;
+}
+
+
+.nombresobremi {
+        font-size: 1.8rem;
+    }
+
+  .img-perfil{
+    height: 8rem;
+    width: 8rem;
+}
+
+    #content{
+        padding: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #saludo1{
+        background-color: var(--color-4);
+        border-radius: 2rem;
+    }
+  .newspaper {
+    column-count: 1;
+};
+     .svg1 {
+        height: 150vh;
+        width: 50vw;
+        position: absolute;
+        }
+
+     #elipse1 {
+        rx: 14rem;
+        ry: 38rem;
+    }
+
+    .contenedor-eliptico{
+        display: none;
+    }
+      #section2{
+        font-size: 1rem;
+    }
+    .card-back > p{
+    font-size: 1rem ;
+    }
+
+    .calltoaction{
+    font-size: 0.7rem;
+    margin: 0.3rem;
+}
+}
+
+
+
+
+
+@media (min-width:769px)  and (max-width:1024px) {
+
+        .img-perfil-gato-nav {
+ display:none;
+}
+    #section2
+ {
+    font-size: 1.5rem;
+}
+     .img-perfil{
+    height: 10rem;
+    width: 10rem;
+}
+      .newspaper {
+    column-count: 1;
+}
+
+        #elipse1 {
+        rx: 18rem;
+        ry: 55rem
+       
+    }
+    .contenedor-eliptico{ 
+        width: 31rem;
+        left: -8rem;
+        top: -7rem;       
+    }
+
+    .texto-eliptico {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        font-size: 1.6rem;
+}
+
+.saludo{        
+    font-size: 2rem;
+    margin-left: 8rem;    
+    margin-top: 15rem;
+}
+   
+}
+@media (min-width:1025px)  and (max-width:1280px){
+
+        .img-perfil-gato-nav {
+ display:none;
+}
+   
+   .newspaper{
+    font-size: 1rem;
+    column-count: 1;
+};
+     .card{
+        width: 23rem;
+        height: 23rem;
+    }
+    
+    .contenedor-eliptico{ 
+        width: 31rem;
+        left: -6rem;
+        top: -7rem;       
+    }
+
+    .texto-eliptico {
+        margin-top: 3rem;
+        margin-left: 3rem;
+        font-size: 2.3rem;
+}
+
+    #elipse1 {
+        rx: 24rem;
+        ry: 45rem;
+        cx: 0;
+        cy: 50vh;
+    }
+    .saludo{        
+    font-size: 2.5rem;
+    margin-left: 8rem;    
+    margin-top: 15rem;
+    }
+
+     .form1> form > div > .inp-nombre{ 
+    margin: 1rem;    
+    height: 1.3rem ;
+    margin: 1.5rem ;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;}
+     .card-back > p{
+    font-size: 1rem ;
+    }
+
+}
+@media (min-width:1281px) and (max-width:1536px){
+            .img-perfil-gato-nav {
+ display:none;
+}
+
+.newspaper{
+    font-size: 1.2rem;
+}
+ .card{
+        width: 23rem;
+        height: 23rem;
+    }
+     .card-back{
+        font-size: 1rem;
+    }
+    
+    .contenedor-eliptico{ 
+        left: -10rem;
+        top: -7rem;
+    }
+
+    .texto-eliptico {
+    margin-top: 3rem;
+    margin-left: 3rem;  
+    font-size: 2.3rem;
+}
+
+    #elipse1{
+        rx: 24rem;
+        ry: 45rem;
+        cx: 0;
+        cy: 50vh;
+    }
+    .saludo{
+        
+    font-size: 2.3rem;
+    margin-left: 8rem;
+    
+    margin-top: 15rem;
+    }
+     .card-title{
+        font-size: 1.4rem;
+    }
+    
+    .card-tools > div{
+         font-size: 1.3rem;
+
+    }
+     .card-back > p{
+    font-size: 1rem ;
+    }
+
+}
+@media (min-width:1537px) and (max-width: 2500px)
+{
+
+            .img-perfil-gato-nav {
+ display:none;
+}
+
+.newspaper{
+    font-size: 1rem;
+}
+    .card{
+        width: 30rem;
+        height: 30rem;
+    }
+ .saludo{
+    font-size: 3rem;
+ }
+   
+    .contenedor-eliptico{        
+    left: -16rem;
+    top: -7rem;
+    }
+    .texto-eliptico{
+        font-size: 2.3rem;
+    }
+    #elipse1{
+        rx: 24rem;
+        ry: 45rem;
+        cx: 0;
+        cy: 50vh;
+    }
+    .card-back{
+        font-size: 1rem;
+    }
+    .card-title{
+        font-size: 1.5rem;
+    }
+    
+    .card-tools > div{
+         font-size: 1.6rem;
+
+    }
+
+    .form1{
+    display: grid;
+    margin: 2rem;
+    padding: 2rem;
+    border: solid 1px var(--color-dark-2);
+    border-radius: 1rem;
+    font-size: 1rem;    
+}
+.form1 > form > div > .lab-nombre{
+    margin: 1rem;
+    font-size: 0.9rem;
+}
+.form1 > form > div > .lab-email{
+     margin: 1rem;
+    font-size: 0.9rem;
+}
+.form1 > form > div > .lab-mensaje{
+     margin: 1rem;
+    font-size: 0.9rem;
+}
+.form1 .inp-mensaje{
+    font-size: 0.9rem;
+}
+.calltoaction{
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+   
+}
+
+
+@media (min-width:2501px) 
+{
+
+            .img-perfil-gato-nav {
+ display:none;
+}
+
+#saludo{
+    font-size: 2rem;
+}
+    
+
+    .card{
+       width: 42rem;
+        height: 42rem; 
+    }
+ .saludo{
+    font-size: 4.5rem;
+ }
+   
+    .contenedor-eliptico{        
+    left: -16rem;
+    top: -7rem;
+    }
+    .texto-eliptico{
+        font-size: 2.3rem;
+    }
+    #elipse1{
+        rx: 24rem;
+        ry: 45rem;
+        cx: 0;
+        cy: 50vh;
+    }
+    .card-back{
+        font-size: 1rem;
+    }
+    .card-title{
+        font-size: 1.5rem;
+    }
+    
+    .card-tools > div{
+         font-size: 1.6rem;
+
+    }
+
+    .form1{
+    display: grid;
+    margin: 2rem;
+    padding: 2rem;
+    border: solid 1px var(--color-dark-2);
+    border-radius: 1rem;
+    font-size: 1rem;    
+}
+.form1 > form > div > .lab-nombre{
+    margin: 1rem;
+    font-size: 1rem;
+}
+.form1 > form > div > .lab-email{
+     margin: 1rem;
+    font-size: 1rem;
+}
+.form1 > form > div > .lab-mensaje{
+     margin: 1rem;
+    font-size: 1rem;
+}
+.form1 .inp-mensaje{
+    font-size: 1rem;
+}
+.calltoaction{
+    font-size: 2.1rem;
+    margin: 0.5rem;
+}
+   
+}
