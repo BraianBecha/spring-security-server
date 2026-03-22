@@ -37,7 +37,7 @@ public class MyUserDetailService implements UserDetailsService{
 
 	
 	
-	//Supuestamente esto es lo único que debería quedar: 
+	
 	
     @Override
     public User loadUserByUsername(String username) throws UsernameNotFoundException {

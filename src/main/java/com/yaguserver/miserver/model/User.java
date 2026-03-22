@@ -33,7 +33,6 @@ public class User implements UserDetails {
 
     public User() {}
 
-    // Getters y setters de tus campos reales
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -48,8 +47,6 @@ public class User implements UserDetails {
     
     
     
-
-    // Métodos de UserDetails — Hibernate los ignora con @Transient
     @Override
     @Transient
     public String getUsername() { return username; }
