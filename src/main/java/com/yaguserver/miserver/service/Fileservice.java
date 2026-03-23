@@ -24,13 +24,6 @@ import java.nio.file.Files;
 @Service
 public class Fileservice {
 	
-	
-	
-
-	//private Path ruta = Paths.get("../../Archivos-Simulados");
-	
-	
-	
 	public List<String> listaderutas = new ArrayList<>();
    
 	public void listarDirectorios(String nombreDirectorio) throws IOException {	
