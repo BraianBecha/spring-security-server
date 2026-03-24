@@ -117,8 +117,7 @@ public class Controller {
 	        user = userDetailsService.loadUserByUsername(request.username());
 	        String token = jwtService.generateToken(user);
 	        return ResponseEntity.ok(Map.of("token", token));
-	    }
-	   	  
+	    }	   	  
 	  	  
 	  @PostMapping("/signup")
 	  public ResponseEntity<AuthResponse> signup(@RequestBody SignupRequest request) {		
