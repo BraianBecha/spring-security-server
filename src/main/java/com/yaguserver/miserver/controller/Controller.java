@@ -83,6 +83,23 @@ public class Controller {
 		 return lista;
 	  }
 	  
+	  
+	  /*
+	   * 
+	   * 
+	   * 
+	   * ResponseEntity
+	   * .header("Content-Type", "application/json")
+	   * 
+	   * 
+	   * 
+	   * 
+	   * */
+	// 
+	  
+	  
+	  
+	  
 	  @GetMapping("/obtener")
 	  public ResponseEntity<InputStreamResource> descargarArchivo(@RequestBody downloadRequest request) throws IOException {	  
 		  return fileService.descargarPorPath(request.path);   
@@ -143,8 +160,17 @@ public class Controller {
 	      return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole().toString()));
 	  }
 	  
+	 
 	  
-	
+	  public String obtenerExtension(String filePath) {		  
+		 
+	        String filename = filePath.substring(filePath.lastIndexOf('\\') + 1);
+	       
+	        int dotIndex = filename.lastIndexOf('.');
+
+	        String extension = (dotIndex > 0) ? filename.substring(dotIndex + 1) : "";
+	        return extension;
+	  }
 	  
 }
 

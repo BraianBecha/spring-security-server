@@ -10,6 +10,8 @@ public class Filenode {
 	  FileType type;
 	  String path;
 	  String name;
+	  String ext;
+	
 	  long size;
 	  long modified;
 	  boolean readable;
@@ -36,9 +38,30 @@ public class Filenode {
 		 this.setExecutable(archivo.canExecute());
 		 this.setWritable(archivo.canWrite());
 		 
+		 setExt(this.obtenerExtension(path.toString()));
+		 
 	 }
 	 
+	 public String obtenerExtension(String filePath) {		  
+		 
+	        String filename = filePath.substring(filePath.lastIndexOf('\\') + 1);
+	       
+	        int dotIndex = filename.lastIndexOf('.');
+
+	        String extension = (dotIndex > 0) ? filename.substring(dotIndex + 1) : "";
+	        return extension;
+	  }
 	 
+	 
+	 
+	 
+	  public String getExt() {
+			return ext;
+		}
+
+		  public void setExt(String ext) {
+			  this.ext = ext;
+		  }
 	 
 	 public String getFormatedDate() {
 		return formatedDate;
