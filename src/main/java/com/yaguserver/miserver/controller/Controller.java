@@ -34,7 +34,6 @@ import jakarta.annotation.Resource;
 
 @RestController
 @RequestMapping
-//@Controller
 public class Controller {
 	
     @Autowired private AuthenticationManager authManager;
@@ -89,8 +88,8 @@ public class Controller {
 		  return fileService.descargarPorPath(request.path);   
 	  }
 	  
-	  @GetMapping("/recibir")
-	  public String retornar() throws IOException {
+	  @GetMapping("/obtenerlistaxml")
+	  public String retornarxml() throws IOException {
 		  String respuesta;
 		  StringBuilder sb = new StringBuilder();
 		 List<Filenode> lista = this.servicioDeArchivos.getNodes("../../Archivos-Simulados");
@@ -115,7 +114,7 @@ public class Controller {
 	        authManager.authenticate(
 	            new UsernamePasswordAuthenticationToken(request.username(), request.password())
 	        );
-	        UserDetails user = userDetailsService.loadUserByUsername(request.username());
+	        user = userDetailsService.loadUserByUsername(request.username());
 	        String token = jwtService.generateToken(user);
 	        return ResponseEntity.ok(Map.of("token", token));
 	    }
@@ -123,18 +122,16 @@ public class Controller {
 	  	  
 	  @PostMapping("/signup")
 	  public ResponseEntity<AuthResponse> signup(@RequestBody SignupRequest request) {		
-		 // User user = new User();				  		  		  
+			  		  		  
 	      if (userRepo.existsByUsername(request.username)) {
 	    	  System.out.println("user name exists");
 	          return ResponseEntity.badRequest().body(null);
 	      }else
 	      {	    	  
-	      	  System.out.println("ok, username does not exist before " + request.username + "  " + request.username());	    	  
-	      }	  
-	      
+	      	  System.out.println("ok, username does not exist before" + request.username + "  " + request.username());
+	      }	  	      
 	      user.setUsername(request.username);	     
-	      user.setPassword(passwordEncoder.encode(request.password()));	  
-	      
+	      user.setPassword(passwordEncoder.encode(request.password()));	  	      
 	      if(request.role == null || request.role.isEmpty() ) {
 	    	  System.out.println("role llegó null");
 	    	  user.setRole(UserType.USER);
@@ -142,8 +139,7 @@ public class Controller {
 	      user.setRole(UserType.valueOf(request.role));
 	      System.out.println("role llegó con " + request.role);
 	      }
-	      userRepo.save(user);
-
+      userRepo.save(user);
 	      String token = jwtService.generateToken(user);
 	      return ResponseEntity.ok(new AuthResponse(token, user.getUsername(), user.getRole().toString()));
 	  }
