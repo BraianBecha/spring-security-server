@@ -16,9 +16,6 @@ import jakarta.persistence.Transient;
 @Table(name = "user")
 public class User implements UserDetails {
 
-    /**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	

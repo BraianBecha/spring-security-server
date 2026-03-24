@@ -43,7 +43,7 @@ public class Controller {
     @Autowired private PasswordEncoder passwordEncoder;
     @Autowired private IUserRepository userRepo;
     @Autowired private Fileservice fileService;
-
+    @Autowired private User user;
 	
 	record AuthResponse(String atoken, String ausername, String arole) {};
 	record LoginRequest(String username, String password) {};
@@ -123,7 +123,7 @@ public class Controller {
 	  	  
 	  @PostMapping("/signup")
 	  public ResponseEntity<AuthResponse> signup(@RequestBody SignupRequest request) {		
-		  User user = new User();				  		  		  
+		 // User user = new User();				  		  		  
 	      if (userRepo.existsByUsername(request.username)) {
 	    	  System.out.println("user name exists");
 	          return ResponseEntity.badRequest().body(null);
